@@ -5,37 +5,45 @@ import FirstExample from "./FirstExample";
 import Jokes from "./Jokes";
 import Props from "./Props";
 import Tasks from "./Tasks";
-import jokesData from "./Data";
+import Data from "./Data";
 
 const App = () => {
-  const jokeselement = jokesData.map((joke) => {
-    return (
-      <Jokes
-        setup={joke.setup}
-        punchline={joke.punchline}
-        writer={joke.writer}
-        rate={joke.rate}
-        isPun={joke.isPun}
-        comments={joke.comments}
-      />
-    );
-  });
+  // const jokeselement = jokesData.map((joke) => {
+  //   return (
+  //     <Jokes
+  //       setup={joke.setup}
+  //       punchline={joke.punchline}
+  //       writer={joke.writer}
+  //       rate={joke.rate}
+  //       isPun={joke.isPun}
+  //       comments={joke.comments}
+  //     />
+  //   );
+  // });
+
+
+  
   return (
-    <>
-      {jokeselement}
+    <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 m-2">
+
+        {Data.map((item) => (
+          <Entry
+            key={item.id}
+            img={item.img}
+            title={item.title}
+            country={item.country}
+            googleMapsLink={item.googleMapsLink}
+            dates={item.dates}
+            text={item.text}
+               
+            />
+         ))  }
+      {/* {jokeselement} */}
 
       {/* <Arr/> */}
       {/* <Tasks/> */}
 
-      {/* <Entry
-    img={{src: "src/assets/1.jpg", alt: "first image"}}
-    title= "first robot"
-    country= "misir"
-googleMapsLink="https://www.google.com/maps/place/Van+Kedisi+Evi/@38.5734678,43.2463074,13z/data=!4m6!3m5!1s0x40127a812ead5a7b:0xae26aa3c41973951!8m2!3d38.5734758!4d43.2813308!16s%2Fg%2F11f3n34k97?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D"
-
-dates= "12 jan 2021 - 24 JAN 2052"
-text = "lorem the text one in the first robot lorem the text one in the first robot lorem the text one in the first robot lorem the text one in the first robot lorem the text one in the first robot lorem the text one in the first robot lorem the text one in the first robot lorem the text one in the first robot"
-    />  */}
+         
       {/* <FirstExample/> 
  <Header/>
  */}
@@ -63,7 +71,7 @@ text = "lorem the text one in the first robot lorem the text one in the first ro
         setup="Why did the scarecrow win an award?"
         punchline="Because he was outstanding in his field."
       /> */}
-    </>
+    </main>
   );
 };
 

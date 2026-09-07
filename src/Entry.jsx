@@ -1,40 +1,57 @@
-import React from 'react'
+import React from "react";
 
 function Entry(props) {
-   
   return (
-    <div>
-        <section className='flex justify-between items-center m-10 gap-5 bg-gray-300 rounded-3xl  '>
-            <div className='w-38 h-60 rounded-4xl shrink-0 overflow-hidden' >
-                <img className='w-4/4 h-4/4 ' src={props.img.src} alt={props.                       img.alt} />
-            </div>
-            <div className=' text-black '>
-   <div className='flex items-center gap-2'>
-        <img 
-            className='w-5 h-5' 
-            src="src/assets/marker.png" 
-            alt="map marker" 
-        />
-        <span className='font-bold'>{props.country}</span>
-        <a 
-            className='font-light text-sky-500' 
-            href={  props.googleMapsLink}
+    <article className="bg-gray-300 rounded-3xl overflow-hidden shadow-md border-2 border-gray-400 h-full hover:scale-105 transition-transform duration-300">
+
+      {/* Image */}
+      {props.img && (
+        <div className="w-full h-56">
+          <img
+            className="w-full h-full object-cover"
+            src={props.img.src}
+            alt={props.img.alt}
+          />
+        </div>
+      )}
+
+      {/* Content */}
+      <div className="p-5 text-black">
+
+        {/* Country + Map */}
+        <div className="flex flex-wrap items-center gap-2 mb-3">
+          <span className="font-bold text-sm hover:underline">
+            {props.country}
+          </span>
+
+          <a
+            className="text-sky-500 text-sm hover:text-sky-700"
+            href={props.googleMapsLink}
             target="_blank"
             rel="noopener noreferrer"
-        >
-            view in the map
-        </a>
-    </div>
+          >
+            View in map
+          </a>
+        </div>
 
-<h1 className='font-extrabold text-sky-700'>{props.title}</h1>
-<p className='font-medium '>{props.dates}</p>
-<p className='font-light  text-sky-500  '>{props.text}  </p>
-            </div>
-        </section>
+        {/* Title */}
+        <h1 className="font-extrabold text-sky-700 text-2xl mb-2">
+          {props.title}
+        </h1>
 
+        {/* Dates */}
+        <p className="font-medium text-sm mb-3">
+          {props.dates}
+        </p>
 
-    </div>
-  )
+        {/* Description */}
+        <p className="font-light text-sky-500 text-sm leading-relaxed">
+          {props.text}
+        </p>
+
+      </div>
+    </article>
+  );
 }
 
-export default Entry
+export default Entry;
