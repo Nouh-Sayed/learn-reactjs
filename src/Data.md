@@ -10,3 +10,13 @@ https://www.google.com/maps/place/Van+Kedisi+Evi/@38.5734678,43.2463074,13z/data
 dates: 12 jan 2021 - 24 JAN 2025
 
 text : lorem the text one in the first bilmem ne
+
+
+
+
+ setup="What did the fish say when it hit the wall?"
+        punchline="Dam."
+        writer="John Doe"
+        rate={5}    
+        isPun={true}
+        comments={["This is a great joke!", "I love it!", "Hilarious!", "Not fu

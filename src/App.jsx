@@ -1,28 +1,33 @@
+import Arr from "./Arr";
 import Header from "./Component/Header";
 import Entry from "./Entry";
 import FirstExample from "./FirstExample";
 import Jokes from "./Jokes";
 import Props from "./Props";
 import Tasks from "./Tasks";
+import jokesData from "./Data";
 
 const App = () => {
-
-   return (
+  const jokeselement = jokesData.map((joke) => {
+    return (
+      <Jokes
+        setup={joke.setup}
+        punchline={joke.punchline}
+        writer={joke.writer}
+        rate={joke.rate}
+        isPun={joke.isPun}
+        comments={joke.comments}
+      />
+    );
+  });
+  return (
     <>
+      {jokeselement}
 
+      {/* <Arr/> */}
+      {/* <Tasks/> */}
 
-
-<Tasks/>
-
-
-
-
-
-
-
-
-
-    {/* <Entry
+      {/* <Entry
     img={{src: "src/assets/1.jpg", alt: "first image"}}
     title= "first robot"
     country= "misir"
