@@ -21,9 +21,11 @@ const App = () => {
   //   );
   // });
 
-
-  
+ 
   return (
+  
+  <>
+<Header/>
     <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 m-2">
 
         {Data.map((item) => (
@@ -45,7 +47,7 @@ const App = () => {
 
          
       {/* <FirstExample/> 
- <Header/>
+
  */}
       {/* <Props/> */}
       {/* <Jokes
@@ -72,6 +74,7 @@ const App = () => {
         punchline="Because he was outstanding in his field."
       /> */}
     </main>
+    </>
   );
 };
 

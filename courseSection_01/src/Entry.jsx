@@ -2,7 +2,7 @@ import React from "react";
 
 function Entry(props) {
   return (
-    <article className="bg-gray-300 rounded-3xl overflow-hidden shadow-md border-2 border-gray-400 h-full hover:scale-105 transition-transform duration-300">
+    <article className="bg-gray-200 rounded-3xl overflow-hidden shadow-md border-2 border-gray-400 h-full hover:scale-105 transition-transform duration-300">
 
       {/* Image */}
       {props.img && (
