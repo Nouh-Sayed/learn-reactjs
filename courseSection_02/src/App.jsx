@@ -4,6 +4,7 @@ import Formchef from './Formchef'
 import Usestate from './Usestate'
 import Ternary from './Ternary'
 import Toggilingstate from './Toggilingstate'
+import ArrayState from './ArrayState'
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
      <Formchef/> */}
      {/* <Usestate/> */}
      {/* <Ternary/> */}
-     <Toggilingstate/>
+     {/* <Toggilingstate/> */}
+     <ArrayState/>
     </div>
   )
 }

@@ -5,10 +5,10 @@ const Toggilingstate = () => {
 
 const  [isgoingout , setisgoingout]= React.useState(Boolean);
 
-let answar= isgoingout ? 'yes':'no';
+
 function isgo()
 {
-    setisgoingout (true)
+    setisgoingout (prev => !prev)
 }
   return (
 
@@ -16,8 +16,8 @@ function isgo()
         <h1>what are you doing today</h1>
 
 
-      <button className ="value border-5 border-blue-300 p-5 w-15 ml-50 " onClick={setisgoingout}>
-       yes
+      <button className ="value border-5 border-blue-300 p-5 w-15 ml-50 " onClick={isgo}>
+       {isgoingout ? 'yes':'no'}
         </button>
        </div>
   ) 
