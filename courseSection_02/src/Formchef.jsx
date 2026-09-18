@@ -1,51 +1,63 @@
-import React from 'react'
+
+import React from "react";
 
 const Formchef = () => {
-  const ingredients = [
+  const [inputValue, setInputValue] = React.useState("");
+
+  const [ingredients, setIngredients] = React.useState([
     "chiken",
     "beef",
     "pork",
     "fish",
-  
-  ]
+  ]);
 
-    function handleSubmit(e) {
-    e.preventDefault()
-
-    console.log("form submitted")
-      const formData = new FormData(e.currentTarget)
-  const newIngredient = formData.get("ingredient")
-  console.log(newIngredient)
-  ingredients.push(newIngredient)
-  console.log( ingredients);
-
+  function addingredient (){
+    if (inputValue.trim() === ""){
+      alert ("enter the value")
+      return
+    }
+    setIngredients(previngredient => [...previngredient,inputValue])
+    setInputValue("")
   }
-  // function mouseOver() { 
-  //   console.log("mouse over")
-  // }
 
-  // function handleClick() {
-  //   console.log("clicked")
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+
+  //   const newIngredient = inputValue.trim();
+
+  //   if (newIngredient === "") {
+  //     alert("Enter the value");
+  //     return;
+  //   }
+
+  //   setIngredients((prevIngredients) => [
+  //     ...prevIngredients,
+  //     newIngredient,
+  //   ]);
+
+  //   setInputValue("");
   // }
 
   return (
     <div>
+    
       <form
         className="flex justify-center items-center gap-5 h-30"
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
       >
         <input
           type="text"
           placeholder="e.g oregano"
           className="border border-gray-300 p-2 rounded-lg"
-          // onMouseOver={mouseOver}
-          name = "ingredient"
-       />
+          name="ingredient"
+          onChange={(e) => setInputValue(e.target.value)}
+          value={inputValue}
+        />
 
         <button
-          type="submit"
+          type="button"
           className="bg-black text-white px-2 py-2 rounded-xl hover:bg-gray-300"
-          // onClick={handleClick}
+        onClick={addingredient}
         >
           + Add Ingredient
         </button>
@@ -59,7 +71,8 @@ const Formchef = () => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Formchef
+export default Formchef;
+

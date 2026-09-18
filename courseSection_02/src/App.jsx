@@ -9,12 +9,12 @@ import ArrayState from './ArrayState'
 const App = () => {
   return (
     <div>
-     {/* <Headerchef/>
-     <Formchef/> */}
+   <Headerchef/>
+     <Formchef/>
      {/* <Usestate/> */}
      {/* <Ternary/> */}
      {/* <Toggilingstate/> */}
-     <ArrayState/>
+     {/* <ArrayState/> */}
     </div>
   )
 }
