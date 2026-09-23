@@ -5,12 +5,17 @@ import Usestate from './Usestate'
 import Ternary from './Ternary'
 import Toggilingstate from './Toggilingstate'
 import ArrayState from './ArrayState'
-
+import Stateprec from './Stateprec'
+function addname()
+{
+  
+}
 const App = () => {
   return (
     <div>
-   <Headerchef/>
-     <Formchef/>
+   {/* <Headerchef/>
+     <Formchef/> <hr /> */}
+     <Stateprec/>
      {/* <Usestate/> */}
      {/* <Ternary/> */}
      {/* <Toggilingstate/> */}
