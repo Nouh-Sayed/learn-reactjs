@@ -6,16 +6,15 @@ import Ternary from './Ternary'
 import Toggilingstate from './Toggilingstate'
 import ArrayState from './ArrayState'
 import Stateprec from './Stateprec'
-function addname()
-{
-  
-}
+import Objectstate from './Objectstate'
+
 const App = () => {
   return (
     <div>
-   {/* <Headerchef/>
-     <Formchef/> <hr /> */}
-     <Stateprec/>
+   <Headerchef/>
+     <Formchef/> <hr />
+     <Objectstate/>
+     {/* <Stateprec/> */}
      {/* <Usestate/> */}
      {/* <Ternary/> */}
      {/* <Toggilingstate/> */}
