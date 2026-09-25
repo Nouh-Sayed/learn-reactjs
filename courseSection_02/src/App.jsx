@@ -7,13 +7,15 @@ import Toggilingstate from './Toggilingstate'
 import ArrayState from './ArrayState'
 import Stateprec from './Stateprec'
 import Objectstate from './Objectstate'
+import Formsinreact from './Formsinreact'
 
 const App = () => {
   return (
-    <div>
+    <div >
    <Headerchef/>
-     <Formchef/> <hr />
-     <Objectstate/>
+     <Formchef/> 
+     <Formsinreact/>
+     {/* <Objectstate/> */}
      {/* <Stateprec/> */}
      {/* <Usestate/> */}
      {/* <Ternary/> */}

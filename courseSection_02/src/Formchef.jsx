@@ -5,21 +5,12 @@ const Formchef = () => {
   const [inputValue, setInputValue] = React.useState("");
 
   const [ingredients, setIngredients] = React.useState([
-    "chiken",
-    "beef",
-    "pork",
-    "fish",
+   
   ]);
 
-  function addingredient (){
-    if (inputValue.trim() === ""){
-      alert ("enter the value")
-      return
-    }
-    setIngredients(previngredient => [...previngredient,inputValue])
-    setInputValue("")
-  }
+  function addingredients (formData){
 
+console.log(formData.get("ingredient"));
   // function handleSubmit(e) {
   //   e.preventDefault();
 
@@ -30,18 +21,18 @@ const Formchef = () => {
   //     return;
   //   }
 
-  //   setIngredients((prevIngredients) => [
-  //     ...prevIngredients,
-  //     newIngredient,
-  //   ]);
+    // setIngredients((prevIngredients) => [
+    //   ...prevIngredients,
+    //   newIngredient,
+    // ]);
 
   //   setInputValue("");
-  // }
+  }
 
   return (
     <div>
     
-      <form
+      <form action={addingredients}
         className="flex justify-center items-center gap-5 h-30"
         // onSubmit={handleSubmit}
       >
@@ -50,14 +41,14 @@ const Formchef = () => {
           placeholder="e.g oregano"
           className="border border-gray-300 p-2 rounded-lg"
           name="ingredient"
-          onChange={(e) => setInputValue(e.target.value)}
-          value={inputValue}
+          // onChange={(e) => setInputValue(e.target.value)}
+          // value={inputValue}
         />
 
         <button
-          type="button"
+          type="submit"
           className="bg-black text-white px-2 py-2 rounded-xl hover:bg-gray-300"
-        onClick={addingredient}
+        onClick={addingredients}
         >
           + Add Ingredient
         </button>
