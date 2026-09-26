@@ -8,13 +8,45 @@ import ArrayState from './ArrayState'
 import Stateprec from './Stateprec'
 import Objectstate from './Objectstate'
 import Formsinreact from './Formsinreact'
-
+import Jokes from './Jokes'
+import Rendercon from './Rendercon'
 const App = () => {
   return (
     <div >
-   <Headerchef/>
+         {/* <Jokes
+        setup="What did the fish say when it hit the wall?"
+      //   punchline="Dam."
+      //   writer="John Doe"
+      //   rate={5}    
+      //   isPun={true}
+      //   comments={["This is a great joke!", "I love it!", "Hilarious!", "Not funny."]}
+      // 
+      />
+     <hr />
+      <Jokes
+        // writer="John Doe"
+        setup="Why did the scarecrow win an award?"
+        punchline="Because he was outstanding in his field."
+        
+      /> */}
+
+<Rendercon/>
+     {/* <Jokes
+        setup="What did the fish say when it hit the wall?"
+        punchline="Dam."
+      />
+<br />
+      <hr />
+
+      <Jokes
+        setup="Why did the scarecrow win an award?"
+        punchline="Because he was outstanding in his field."
+      /> */}
+
+
+   {/* <Headerchef/>
      <Formchef/> 
-     <Formsinreact/>
+     <Formsinreact/> */}
      {/* <Objectstate/> */}
      {/* <Stateprec/> */}
      {/* <Usestate/> */}
