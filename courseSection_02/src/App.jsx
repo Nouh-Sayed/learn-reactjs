@@ -30,8 +30,8 @@ const App = () => {
         
       /> */}
 
-<Rendercon/>
-     {/* <Jokes
+{/* <Rendercon/>
+     <Jokes
         setup="What did the fish say when it hit the wall?"
         punchline="Dam."
       />
@@ -44,9 +44,9 @@ const App = () => {
       /> */}
 
 
-   {/* <Headerchef/>
+   <Headerchef/>
      <Formchef/> 
-     <Formsinreact/> */}
+     {/* <Formsinreact/> */}
      {/* <Objectstate/> */}
      {/* <Stateprec/> */}
      {/* <Usestate/> */}

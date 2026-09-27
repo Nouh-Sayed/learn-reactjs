@@ -53,7 +53,7 @@ const Jokes = (props) => {
       <button   className="border" onClick={toggleShown}>
         {isShown ? "Hide Punchline" : "Show Punchline"}
       </button>
-    </div>
+    </div> 
   );
 };
 

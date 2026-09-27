@@ -1,15 +1,16 @@
 import React from 'react'
 
 const Rendercon = () => {
-    const [unreadMessages, setUnreadMessages] = React.useState(["a","b"]);
+    const [unreadMessages, setUnreadMessages] = React.useState([]);
 
-    function toggletext(){
-        setUnreadMessages((prev) => !prev)
-    }
+
   return (
-    <div>
-    {unreadMessages && <h1>you have unread messages</h1>}
-  <button className= "border "onClick={toggletext}> show </button>
+    <div> 
+      {unreadMessages.length === 0 &&  <h1>you are all caught up</h1>}
+    {unreadMessages.length === 1 &&  <h1>you have <b>1</b> unread message</h1>}
+    {unreadMessages.length>= 2 &&  <h1>you have <b>{unreadMessages.length}</b> unread messages</h1>}
+
+
     </div>
   )
 }
