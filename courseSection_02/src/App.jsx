@@ -10,9 +10,23 @@ import Objectstate from './Objectstate'
 import Formsinreact from './Formsinreact'
 import Jokes from './Jokes'
 import Rendercon from './Rendercon'
+import Count from './Count'
+import Pads from './Pads'
 const App = () => {
   return (
     <div >
+
+
+
+
+<Pads/>
+
+
+
+
+
+
+
          {/* <Jokes
         setup="What did the fish say when it hit the wall?"
       //   punchline="Dam."
@@ -43,10 +57,10 @@ const App = () => {
         punchline="Because he was outstanding in his field."
       /> */}
 
-
-   <Headerchef/>
-     <Formchef/> 
-     {/* <Formsinreact/> */}
+{/* <Count/> */}
+   {/* <Headerchef/>
+     <Formchef />   */}
+      {/* <Formsinreact/> */}
      {/* <Objectstate/> */}
      {/* <Stateprec/> */}
      {/* <Usestate/> */}
