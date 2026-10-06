@@ -19,7 +19,7 @@ const App = () => {
 
 
 
-<Pads/>
+{/* <Pads/> */}
 
 
 
@@ -58,8 +58,8 @@ const App = () => {
       /> */}
 
 {/* <Count/> */}
-   {/* <Headerchef/>
-     <Formchef />   */}
+   <Headerchef/>
+     <Formchef />  
       {/* <Formsinreact/> */}
      {/* <Objectstate/> */}
      {/* <Stateprec/> */}
