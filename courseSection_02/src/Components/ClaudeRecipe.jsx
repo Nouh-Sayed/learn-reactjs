@@ -1,85 +1,22 @@
-import React from 'react'
+import React from "react";
+import ReactMarkdown from "react-markdown";
 
-// const key = import.meta.env.VITE_TEST_KEY;
-// console.log(key)
-
-
-const ClaudeRecipe = () => {
-  const key = import.meta.env.VITE_ANTHROPIC_API_KEY;
-
-
-
-const token = import.meta.env.VITE_HF_ACCESS_TOKEN;
-
-// console.log(key);
-// console.log(token);
-
-
-
+const ClaudeRecipe = ({ recipe }) => {
   return (
+    <section className="max-w-4xl mx-auto mt-10 p-6">
+      <h1 className="text-4xl font-bold text-amber-700 mb-8">
+        AI Recipe
+      </h1>
 
-    <div>
-   
-      <h1 className="text-4xl font-bold text-amber-700" >  Claude Recipe component</h1>
- 
-
-        <section>   <div>
-      <h1 >Chocolate Chip Cookies</h1>
-
-      <p>
-        Welcome to the ultimate guide for making mini chocolate chip cookies!
-        These bite-sized treats are perfect for satisfying your sweet tooth
-        without overindulging. Follow this simple recipe to create delicious,
-        crispy-on-the-outside, chewy-on-the-inside mini chocolate chip cookies
-        that everyone will love.
-      </p>
-
-      <img
-        src="https://cdn.freecodecamp.org/curriculum/labs/recipe.jpg"
-        alt="Ingredients for baking: three eggs, a bowl of flour, a glass of milk, and a whisk arranged on a wooden table."
-      />
-
-      <h2>Ingredients</h2>
-
-      <ul>
-        <li>1 cup all-purpose flour</li>
-        <li>1/2 teaspoon baking soda</li>
-        <li>1/4 cup unsalted butter, softened</li>
-        <li>1/4 cup granulated sugar</li>
-        <li>1/2 teaspoon vanilla extract</li>
-        <li>1/2 cup mini chocolate chips</li>
-      </ul>
-
-      <h2>Instructions</h2>
-
-      <ol>
-        <li>
-          Preheat your oven to 350°F (175°C) and line a baking sheet with
-          parchment paper.
-        </li>
-
-        <li>In a bowl, whisk together the flour and baking soda.</li>
-
-        <li>
-          In another bowl, beat the butter, sugar, and vanilla extract until
-          creamy.
-        </li>
-
-        <li>
-          Gradually add the dry ingredients to the wet mixture, then fold in
-          the mini chocolate chips.
-        </li>
-
-        <li>Drop small spoonfuls of dough onto the baking sheet.</li>
-
-        <li>
-          Bake for 8-10 minutes, then let cool before enjoying!
-        </li>
-      </ol>
-    </div>
+      <div className="prose prose-lg max-w-none">
+        <h1>Nouhun Recommendation</h1>
+        <ReactMarkdown>
+    
+          {recipe}
+        </ReactMarkdown>
+      </div>
     </section>
-    </div>
-  )
-}
+  );
+};
 
-export default ClaudeRecipe
+export default ClaudeRecipe;
