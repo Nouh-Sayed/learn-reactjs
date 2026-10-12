@@ -13,7 +13,6 @@ function getMemeImage() {
           topText: "",
     bottomText: "",
       randomImage: "https://i.imgflip.com/1bij.jpg",
-      
     }));
 }
 
