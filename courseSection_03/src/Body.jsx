@@ -5,7 +5,9 @@ const [meme, setMeme] = React.useState({
   topText: "",
   bottomText: "",
   randomImage: "https://i.imgflip.com/1bij.jpg"
-});
+})
+const [allMemes, setAllMemes] = React.useState([])
+
 function getMemeImage() {
      console.log("Button clicked!");
     setMeme(prevMeme => ({
@@ -15,7 +17,13 @@ function getMemeImage() {
       randomImage: "https://i.imgflip.com/1bij.jpg",
     }));
 }
+  React.useEffect(() => {
+fetch("https://api.imgflip.com/get_memes")
+.then (res=> res.json())
+.then (mems=> setAllMemes(mems.data.memes))
 
+
+  }, [])
 function mouseclick () {
   console.log("Mouse over inputt!");
 }
