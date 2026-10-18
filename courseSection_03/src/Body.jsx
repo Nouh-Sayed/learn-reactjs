@@ -9,14 +9,20 @@ const [meme, setMeme] = React.useState({
 const [allMemes, setAllMemes] = React.useState([])
 
 function getMemeImage() {
-     console.log("Button clicked!");
+    //  console.log("Button clicked!");
+    // setMeme(prevMeme => ({
+    //   ...prevMeme,
+    //       topText: "",
+    // bottomText: "",
+    //   randomImage: "https://i. imgflip.com/1bij.jpg",
+    // }));
+    const rendomNumber = Math.floor(Math.random() * allMemes.length);
+    const url = allMemes[rendomNumber].url;
     setMeme(prevMeme => ({
       ...prevMeme,
-          topText: "",
-    bottomText: "",
-      randomImage: "https://i.imgflip.com/1bij.jpg",
+      randomImage: url,
     }));
-}
+} 
   React.useEffect(() => {
 fetch("https://api.imgflip.com/get_memes")
 .then (res=> res.json())
@@ -24,9 +30,12 @@ fetch("https://api.imgflip.com/get_memes")
 
 
   }, [])
-function mouseclick () {
-  console.log("Mouse over inputt!");
-}
+// function getmeme () {
+//  setMeme(prevMeme => ({
+//     ...prevMeme,
+//     randomImage: allMemes[Math.floor(Math.random() * allMemes.length)].url
+//   }))
+// }
 
 
 
@@ -46,7 +55,7 @@ function handleChange(event){
             </label>
             
             <input
-            onClick={mouseclick}
+       
               className="border w-70 mt-5"
               type="text"
               id="toptext"
@@ -67,7 +76,7 @@ function handleChange(event){
               Bottom Text
             </label>
             <input
-              onClick={mouseclick}
+             
               className="border w-70 mt-5"
               type="text"
               id="bottomtext"
@@ -79,7 +88,7 @@ function handleChange(event){
             />
           </div>
         </section>
-        <button className="border bg-purple-800 text-white w-150 px-4 py-2 mt-6" onClick={getMemeImage}>
+        <button    className="border bg-purple-800 text-white w-150 px-4 py-2 mt-6 hover:bg-purple-600  transition duration-300" onClick={getMemeImage}>
           Get a new meme image 🖼
         </button>
          <div className="relative mt-6">

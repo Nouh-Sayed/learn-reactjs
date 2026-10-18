@@ -5,9 +5,9 @@ import Fetch from './Fetch'
 const App = () => {
   return (
     <div>
-      {/* <Header/>
-      <Body /> */}
-      <Fetch />
+      <Header/>
+      <Body />
+      {/* <Fetch /> */}
     </div>
   )
 }
