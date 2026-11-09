@@ -1,37 +1,54 @@
+
 import Die from "./Die";
+import React from "react";
 
 const App = () => {
-
-const [ dice, setDice] = React.useState(allNewDice());
-
-
   function allNewDice() {
-    return new Array(10).fill(0).map(() => Math.floor(Math.random() * 6) + 1);
+    return new Array(10)
+      .fill(0)
+      .map(() => Math.floor(Math.random() * 6) + 1);
   }
 
+  const [dice, setDice] = React.useState(allNewDice);
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
- function rollDice() {
+  function rollDice() {
     setDice(allNewDice());
   }
 
+  function handleResize() {
+    setWindowWidth(window.innerWidth);
+  
+  }
 
+  React.useEffect(() => {   
+      console.log("resized")
+    window.addEventListener("resize", handleResize);
 
-  return ( 
+    return () => {
+   
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
     <main className="bg-sky-900 w-full min-h-screen flex justify-center items-center">
-      <section className="bg-white w-160 h-160 border-amber-950  rounded-lg shadow-lg flex justify-center items-center">
-      
-      <div className="grid grid-cols-5 gap-8">
-<Die value={1} />
-<Die value={2} />
-<Die value={3} />
-<Die value={4} />
-<Die value={5} />
-<Die value={6} />
-<Die value={7} />
-<Die value={8} />
-<Die value={9} />
-<Die value={10} />
-      </div>
+      <section className="bg-white w-160 h-160 rounded-lg shadow-lg flex flex-col justify-center items-center">
+
+        <p>Window Width: {windowWidth}px</p>
+
+        <div className="grid grid-cols-5 gap-8">
+          {dice.map((die, index) => (
+            <Die key={index} value={die} />
+          ))}
+        </div>
+
+        <button
+          onClick={rollDice}
+          className="bg-amber-950 text-white px-4 py-2 rounded-lg mt-8 shadow-lg hover:bg-amber-800"
+        >
+          Roll
+        </button>
 
       </section>
     </main>
@@ -39,5 +56,3 @@ const [ dice, setDice] = React.useState(allNewDice());
 };
 
 export default App;
-
-
